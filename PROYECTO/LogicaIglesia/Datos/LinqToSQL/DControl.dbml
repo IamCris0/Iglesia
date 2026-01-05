@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SIGP" Class="DControlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-9F1O1KN;Initial Catalog=SIGP;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="Datos.Properties.Settings" SettingsPropertyName="SIGPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Capilla" Member="Capilla">
+    <Type Name="Capilla">
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaicoCoordinador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Capilla_CEB" Member="CEB" ThisKey="idCapilla" OtherKey="idCapilla" Type="CEB" />
+      <Association Name="Capilla_EventoCapilla" Member="EventoCapilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="EventoCapilla" />
+      <Association Name="Capilla_FondoCapilla" Member="FondoCapilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="FondoCapilla" />
+      <Association Name="Capilla_HorarioMisa" Member="HorarioMisa" ThisKey="idCapilla" OtherKey="idCapilla" Type="HorarioMisa" />
+      <Association Name="Capilla_Laico" Member="Laico1" ThisKey="idCapilla" OtherKey="idCapilla" Type="Laico" />
+      <Association Name="Capilla_Misa" Member="Misa" ThisKey="idCapilla" OtherKey="idCapilla" Type="Misa" />
+      <Association Name="Laico_Capilla" Member="Laico" ThisKey="idLaicoCoordinador" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+      <Association Name="Parroquia_Capilla" Member="Parroquia" ThisKey="idParroquia" OtherKey="idParroquia" Type="Parroquia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsuarioRolSistema" Member="UsuarioRolSistema">
+    <Type Name="UsuarioRolSistema">
+      <Column Name="idUsuarioRolSistema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RolSistema_UsuarioRolSistema" Member="RolSistema" ThisKey="idRolSistema" OtherKey="idRolSistema" Type="RolSistema" IsForeignKey="true" />
+      <Association Name="Usuario_UsuarioRolSistema" Member="Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CEB" Member="CEB">
+    <Type Name="CEB">
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="CEB_MiembroCEB" Member="MiembroCEB" ThisKey="idCEB" OtherKey="idCEB" Type="MiembroCEB" />
+      <Association Name="CEB_MovimientoCEB" Member="MovimientoCEB" ThisKey="idCEB" OtherKey="idCEB" Type="MovimientoCEB" />
+      <Association Name="Capilla_CEB" Member="Capilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventoCapilla" Member="EventoCapilla">
+    <Type Name="EventoCapilla">
+      <Column Name="idEventoCapilla" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="EventoCapilla_MovimientoCEB" Member="MovimientoCEB" ThisKey="idEventoCapilla" OtherKey="idEventoCapilla" Type="MovimientoCEB" />
+      <Association Name="Capilla_EventoCapilla" Member="Capilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventoParroquial" Member="EventoParroquial">
+    <Type Name="EventoParroquial">
+      <Column Name="idEventoParroquial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="EventoParroquial_MovimientoParroquial" Member="MovimientoParroquial" ThisKey="idEventoParroquial" OtherKey="idEventoParroquial" Type="MovimientoParroquial" />
+      <Association Name="Parroquia_EventoParroquial" Member="Parroquia" ThisKey="idParroquia" OtherKey="idParroquia" Type="Parroquia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FondoCapilla" Member="FondoCapilla">
+    <Type Name="FondoCapilla">
+      <Column Name="idFondoCapilla" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Association Name="FondoCapilla_MovimientoCEB" Member="MovimientoCEB" ThisKey="idFondoCapilla" OtherKey="idFondoCapilla" Type="MovimientoCEB" />
+      <Association Name="Capilla_FondoCapilla" Member="Capilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FondoParroquial" Member="FondoParroquial">
+    <Type Name="FondoParroquial">
+      <Column Name="idFondoParroquial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Association Name="FondoParroquial_MovimientoParroquial" Member="MovimientoParroquial" ThisKey="idFondoParroquial" OtherKey="idFondoParroquial" Type="MovimientoParroquial" />
+      <Association Name="Parroquia_FondoParroquial" Member="Parroquia" ThisKey="idParroquia" OtherKey="idParroquia" Type="Parroquia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Formacion" Member="Formacion">
+    <Type Name="Formacion">
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Formacion_LaicoFormacion" Member="LaicoFormacion" ThisKey="idFormacion" OtherKey="idFormacion" Type="LaicoFormacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HorarioMisa" Member="HorarioMisa">
+    <Type Name="HorarioMisa">
+      <Column Name="idHorarioMisa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaSemana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Capilla_HorarioMisa" Member="Capilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Laico" Member="Laico">
+    <Type Name="Laico">
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Laico_Capilla" Member="Capilla" ThisKey="idLaico" OtherKey="idLaicoCoordinador" Type="Capilla" />
+      <Association Name="Laico_LaicoFormacion" Member="LaicoFormacion" ThisKey="idLaico" OtherKey="idLaico" Type="LaicoFormacion" />
+      <Association Name="Laico_LaicoRolFuncional" Member="LaicoRolFuncional" ThisKey="idLaico" OtherKey="idLaico" Type="LaicoRolFuncional" />
+      <Association Name="Laico_MiembroCEB" Member="MiembroCEB" ThisKey="idLaico" OtherKey="idLaico" Type="MiembroCEB" />
+      <Association Name="Laico_SolicitudAyuda" Member="SolicitudAyuda" ThisKey="idLaico" OtherKey="idLaico" Type="SolicitudAyuda" />
+      <Association Name="Laico_SolicitudSacramental" Member="SolicitudSacramental" ThisKey="idLaico" OtherKey="idLaico" Type="SolicitudSacramental" />
+      <Association Name="Laico_Usuario" Member="Usuario" ThisKey="idLaico" OtherKey="idLaico" Type="Usuario" />
+      <Association Name="Capilla_Laico" Member="Capilla1" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LaicoFormacion" Member="LaicoFormacion">
+    <Type Name="LaicoFormacion">
+      <Column Name="idLaicoFormacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Formacion_LaicoFormacion" Member="Formacion" ThisKey="idFormacion" OtherKey="idFormacion" Type="Formacion" IsForeignKey="true" />
+      <Association Name="Laico_LaicoFormacion" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LaicoRolFuncional" Member="LaicoRolFuncional">
+    <Type Name="LaicoRolFuncional">
+      <Column Name="idLaicoRolFuncional" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Laico_LaicoRolFuncional" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+      <Association Name="RolFuncional_LaicoRolFuncional" Member="RolFuncional" ThisKey="idRolFuncional" OtherKey="idRolFuncional" Type="RolFuncional" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MiembroCEB" Member="MiembroCEB">
+    <Type Name="MiembroCEB">
+      <Column Name="idMiembroCEB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="CEB_MiembroCEB" Member="CEB" ThisKey="idCEB" OtherKey="idCEB" Type="CEB" IsForeignKey="true" />
+      <Association Name="Laico_MiembroCEB" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Misa" Member="Misa">
+    <Type Name="Misa">
+      <Column Name="idMisa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MontoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSolicitudSacramental" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Capilla_Misa" Member="Capilla" ThisKey="idCapilla" OtherKey="idCapilla" Type="Capilla" IsForeignKey="true" />
+      <Association Name="Sacerdote_Misa" Member="Sacerdote" ThisKey="idSacerdote" OtherKey="idSacerdote" Type="Sacerdote" IsForeignKey="true" />
+      <Association Name="SolicitudSacramental_Misa" Member="SolicitudSacramental" ThisKey="idSolicitudSacramental" OtherKey="idSolicitudSacramental" Type="SolicitudSacramental" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MovimientoCEB" Member="MovimientoCEB">
+    <Type Name="MovimientoCEB">
+      <Column Name="idMovimientoCEB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="idFondoCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEventoCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CEB_MovimientoCEB" Member="CEB" ThisKey="idCEB" OtherKey="idCEB" Type="CEB" IsForeignKey="true" />
+      <Association Name="EventoCapilla_MovimientoCEB" Member="EventoCapilla" ThisKey="idEventoCapilla" OtherKey="idEventoCapilla" Type="EventoCapilla" IsForeignKey="true" />
+      <Association Name="FondoCapilla_MovimientoCEB" Member="FondoCapilla" ThisKey="idFondoCapilla" OtherKey="idFondoCapilla" Type="FondoCapilla" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MovimientoParroquial" Member="MovimientoParroquial">
+    <Type Name="MovimientoParroquial">
+      <Column Name="idMovimientoParroquial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idFondoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="idEventoParroquial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FondoParroquial_MovimientoParroquial" Member="FondoParroquial" ThisKey="idFondoParroquial" OtherKey="idFondoParroquial" Type="FondoParroquial" IsForeignKey="true" />
+      <Association Name="EventoParroquial_MovimientoParroquial" Member="EventoParroquial" ThisKey="idEventoParroquial" OtherKey="idEventoParroquial" Type="EventoParroquial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parroquia" Member="Parroquia">
+    <Type Name="Parroquia">
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Parroquia_Capilla" Member="Capilla" ThisKey="idParroquia" OtherKey="idParroquia" Type="Capilla" />
+      <Association Name="Parroquia_EventoParroquial" Member="EventoParroquial" ThisKey="idParroquia" OtherKey="idParroquia" Type="EventoParroquial" />
+      <Association Name="Parroquia_FondoParroquial" Member="FondoParroquial" ThisKey="idParroquia" OtherKey="idParroquia" Type="FondoParroquial" />
+      <Association Name="Parroquia_SolicitudAyuda" Member="SolicitudAyuda" ThisKey="idParroquia" OtherKey="idParroquia" Type="SolicitudAyuda" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RolFuncional" Member="RolFuncional">
+    <Type Name="RolFuncional">
+      <Column Name="idRolFuncional" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="RolFuncional_LaicoRolFuncional" Member="LaicoRolFuncional" ThisKey="idRolFuncional" OtherKey="idRolFuncional" Type="LaicoRolFuncional" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RolSistema" Member="RolSistema">
+    <Type Name="RolSistema">
+      <Column Name="idRolSistema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="RolSistema_UsuarioRolSistema" Member="UsuarioRolSistema" ThisKey="idRolSistema" OtherKey="idRolSistema" Type="UsuarioRolSistema" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sacerdote" Member="Sacerdote">
+    <Type Name="Sacerdote">
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Apodo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="Sacerdote_Misa" Member="Misa" ThisKey="idSacerdote" OtherKey="idSacerdote" Type="Misa" />
+      <Association Name="Sacerdote_Usuario" Member="Usuario" ThisKey="idSacerdote" OtherKey="idSacerdote" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SolicitudAyuda" Member="SolicitudAyuda">
+    <Type Name="SolicitudAyuda">
+      <Column Name="idSolicitudAyuda" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoSolicitado" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Laico_SolicitudAyuda" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+      <Association Name="Parroquia_SolicitudAyuda" Member="Parroquia" ThisKey="idParroquia" OtherKey="idParroquia" Type="Parroquia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SolicitudSacramental" Member="SolicitudSacramental">
+    <Type Name="SolicitudSacramental">
+      <Column Name="idSolicitudSacramental" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sacramento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSolicitada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFinal" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Association Name="SolicitudSacramental_Misa" Member="Misa" ThisKey="idSolicitudSacramental" OtherKey="idSolicitudSacramental" Type="Misa" />
+      <Association Name="Laico_SolicitudSacramental" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordHash" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Usuario_UsuarioRolSistema" Member="UsuarioRolSistema" ThisKey="idUsuario" OtherKey="idUsuario" Type="UsuarioRolSistema" />
+      <Association Name="Laico_Usuario" Member="Laico" ThisKey="idLaico" OtherKey="idLaico" Type="Laico" IsForeignKey="true" />
+      <Association Name="Sacerdote_Usuario" Member="Sacerdote" ThisKey="idSacerdote" OtherKey="idSacerdote" Type="Sacerdote" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_Capilla_AsignarCoordinador" Method="sp_Capilla_AsignarCoordinador">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idLaicoNuevo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UsuarioRolSistema_Listar" Method="sp_UsuarioRolSistema_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_UsuarioRolSistema_ListarResult">
+      <Column Name="idUsuarioRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionRol" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Capilla_Listar" Method="sp_Capilla_Listar">
+    <Parameter Name="NombreCapilla" Parameter="nombreCapilla" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Capilla_ListarResult">
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Parroquia" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Coordinador" Type="System.String" DbType="VarChar(301) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Capilla_Update" Method="sp_Capilla_Update">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idLaicoCoordinador" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CEB_Listar" Method="sp_CEB_Listar">
+    <Parameter Name="NombreCEB" Parameter="nombreCEB" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_CEB_ListarResult">
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CEB" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EventoCapilla_Delete" Method="sp_EventoCapilla_Delete">
+    <Parameter Name="idEventoCapilla" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EventoCapilla_Insert" Method="sp_EventoCapilla_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EventoCapilla_Listar" Method="sp_EventoCapilla_Listar">
+    <Parameter Name="NombreEvento" Parameter="nombreEvento" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_EventoCapilla_ListarResult">
+      <Column Name="idEventoCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Evento" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Inicio" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Fin" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EventoCapilla_Update" Method="sp_EventoCapilla_Update">
+    <Parameter Name="idEventoCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EventoParroquial_Delete" Method="sp_EventoParroquial_Delete">
+    <Parameter Name="idEventoParroquial" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EventoParroquial_Insert" Method="sp_EventoParroquial_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EventoParroquial_Listar" Method="sp_EventoParroquial_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_EventoParroquial_ListarResult">
+      <Column Name="idEventoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Parroquia" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EventoParroquial_Update" Method="sp_EventoParroquial_Update">
+    <Parameter Name="idEventoParroquial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoCapilla_Delete" Method="sp_FondoCapilla_Delete">
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoCapilla_Insert" Method="sp_FondoCapilla_Insert">
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Saldo" Parameter="saldo" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoCapilla_Listar" Method="sp_FondoCapilla_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_FondoCapilla_ListarResult">
+      <Column Name="idFondoCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FondoCapilla_Update" Method="sp_FondoCapilla_Update">
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Saldo" Parameter="saldo" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoParroquial_Delete" Method="sp_FondoParroquial_Delete">
+    <Parameter Name="idFondoParroquial" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoParroquial_Insert" Method="sp_FondoParroquial_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Saldo" Parameter="saldo" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FondoParroquial_Listar" Method="sp_FondoParroquial_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_FondoParroquial_ListarResult">
+      <Column Name="idFondoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Parroquia" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FondoParroquial_Update" Method="sp_FondoParroquial_Update">
+    <Parameter Name="idFondoParroquial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Saldo" Parameter="saldo" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Formacion_Insert" Method="sp_Formacion_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Formacion_Listar" Method="sp_Formacion_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Formacion_ListarResult">
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Formacion_Update" Method="sp_Formacion_Update">
+    <Parameter Name="idFormacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GenerarMisas_Automatico" Method="sp_GenerarMisas_Automatico">
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_HorarioMisa_Insert" Method="sp_HorarioMisa_Insert">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DiaSemana" Parameter="diaSemana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Hora" Parameter="hora" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_HorarioMisa_Listar" Method="sp_HorarioMisa_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_HorarioMisa_ListarResult">
+      <Column Name="idHorarioMisa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaSemana" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="Hora" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioMisa_Update" Method="sp_HorarioMisa_Update">
+    <Parameter Name="idHorarioMisa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DiaSemana" Parameter="diaSemana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Hora" Parameter="hora" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.String" DbType="VarChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Laico_Delete" Method="sp_Laico_Delete">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Laico_Listar" Method="sp_Laico_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Laico_ListarResult">
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Laico_Update" Method="sp_Laico_Update">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoFormacion_Delete" Method="sp_LaicoFormacion_Delete">
+    <Parameter Name="idLaicoFormacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoFormacion_Insert" Method="sp_LaicoFormacion_Insert">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idFormacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoFormacion_Listar" Method="sp_LaicoFormacion_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_LaicoFormacion_ListarResult">
+      <Column Name="idLaicoFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="Formacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LaicoFormacion_Update" Method="sp_LaicoFormacion_Update">
+    <Parameter Name="idLaicoFormacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoRolFuncional_Delete" Method="sp_LaicoRolFuncional_Delete">
+    <Parameter Name="idLaicoRolFuncional" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoRolFuncional_Insert" Method="sp_LaicoRolFuncional_Insert">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRolFuncional" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LaicoRolFuncional_Listar" Method="sp_LaicoRolFuncional_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_LaicoRolFuncional_ListarResult">
+      <Column Name="idLaicoRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LaicoRolFuncional_Update" Method="sp_LaicoRolFuncional_Update">
+    <Parameter Name="idLaicoRolFuncional" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRolFuncional" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MiembroCEB_Delete" Method="sp_MiembroCEB_Delete">
+    <Parameter Name="idMiembroCEB" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MiembroCEB_Insert" Method="sp_MiembroCEB_Insert">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MiembroCEB_Listar" Method="sp_MiembroCEB_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_MiembroCEB_ListarResult">
+      <Column Name="idMiembroCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301) NOT NULL" CanBeNull="false" />
+      <Column Name="CEB" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MiembroCEB_Update" Method="sp_MiembroCEB_Update">
+    <Parameter Name="idMiembroCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="FechaIngreso" Parameter="fechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Misa_Delete" Method="sp_Misa_Delete">
+    <Parameter Name="idMisa" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Misa_Insert" Method="sp_Misa_Insert">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MontoRecaudado" Parameter="montoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="idSolicitud" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Misa_Listar" Method="sp_Misa_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Misa_ListarResult">
+      <Column Name="idMisa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Sacerdote" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="MontoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Sacramento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Misa_Update" Method="sp_Misa_Update">
+    <Parameter Name="idMisa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MontoRecaudado" Parameter="montoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="idSolicitud" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Misa_UpdateMontoEstado" Method="sp_Misa_UpdateMontoEstado">
+    <Parameter Name="idMisa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MontoRecaudado" Parameter="montoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoCEB_Delete" Method="sp_MovimientoCEB_Delete">
+    <Parameter Name="idMovimientoCEB" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoCEB_Insert" Method="sp_MovimientoCEB_Insert">
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="Monto" Parameter="monto" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="idEventoCapilla" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoCEB_Listar" Method="sp_MovimientoCEB_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_MovimientoCEB_ListarResult">
+      <Column Name="idMovimientoCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CEB" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="FondoCapilla" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EventoCapilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MovimientoCEB_Update" Method="sp_MovimientoCEB_Update">
+    <Parameter Name="idMovimientoCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="Monto" Parameter="monto" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="idEventoCapilla" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoParroquial_Delete" Method="sp_MovimientoParroquial_Delete">
+    <Parameter Name="idMovimientoParroquial" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoParroquial_Insert" Method="sp_MovimientoParroquial_Insert">
+    <Parameter Name="idFondoParroquial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Monto" Parameter="monto" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="idEventoParroquial" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MovimientoParroquial_Listar" Method="sp_MovimientoParroquial_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_MovimientoParroquial_ListarResult">
+      <Column Name="idMovimientoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FondoParroquial" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EventoParroquial" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MovimientoParroquial_Update" Method="sp_MovimientoParroquial_Update">
+    <Parameter Name="idMovimientoParroquial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idFondoParroquial" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Monto" Parameter="monto" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="idEventoParroquial" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Parroquia_Delete" Method="sp_Parroquia_Delete">
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Parroquia_Insert" Method="sp_Parroquia_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Zona" Parameter="zona" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Parroquia_Listar" Method="sp_Parroquia_Listar">
+    <ElementType Name="sp_Parroquia_ListarResult">
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Parroquia_Update" Method="sp_Parroquia_Update">
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Zona" Parameter="zona" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reporte_EventoCapilla_Economico" Method="sp_Reporte_EventoCapilla_Economico">
+    <Parameter Name="FiltroEvento" Parameter="filtroEvento" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Reporte_EventoCapilla_EconomicoResult">
+      <Column Name="EventoCapilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_EventoParroquial_Economico" Method="sp_Reporte_EventoParroquial_Economico">
+    <Parameter Name="FiltroEvento" Parameter="filtroEvento" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Reporte_EventoParroquial_EconomicoResult">
+      <Column Name="EventoParroquial" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_Eventos_PorCapilla" Method="sp_Reporte_Eventos_PorCapilla">
+    <Parameter Name="FiltroCapilla" Parameter="filtroCapilla" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Reporte_Eventos_PorCapillaResult">
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Evento" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_FondosCapilla" Method="sp_Reporte_FondosCapilla">
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Reporte_FondosCapillaResult">
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="FondoCapilla" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_FondosParroquiales" Method="sp_Reporte_FondosParroquiales">
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Reporte_FondosParroquialesResult">
+      <Column Name="Parroquia" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FondoParroquial" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_RecaudacionCapilla" Method="sp_Reporte_RecaudacionCapilla">
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Reporte_RecaudacionCapillaResult">
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMisas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalRecaudado" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reporte_Saldo_Capillas" Method="sp_Reporte_Saldo_Capillas">
+    <Parameter Name="FiltroCapilla" Parameter="filtroCapilla" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Reporte_Saldo_CapillasResult">
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMovimientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalIngresos" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalEgresos" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RolFuncional_Delete" Method="sp_RolFuncional_Delete">
+    <Parameter Name="idRolFuncional" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RolFuncional_Insert" Method="sp_RolFuncional_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RolFuncional_Listar" Method="sp_RolFuncional_Listar">
+    <ElementType Name="sp_RolFuncional_ListarResult">
+      <Column Name="idRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RolFuncional_Update" Method="sp_RolFuncional_Update">
+    <Parameter Name="idRolFuncional" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RolSistema_Delete" Method="sp_RolSistema_Delete">
+    <Parameter Name="idRolSistema" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RolSistema_Insert" Method="sp_RolSistema_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RolSistema_Listar" Method="sp_RolSistema_Listar">
+    <ElementType Name="sp_RolSistema_ListarResult">
+      <Column Name="idRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RolSistema_Update" Method="sp_RolSistema_Update">
+    <Parameter Name="idRolSistema" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(300)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Sacerdote_Delete" Method="sp_Sacerdote_Delete">
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Sacerdote_Insert" Method="sp_Sacerdote_Insert">
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apodo" Parameter="apodo" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Sacerdote_Listar" Method="sp_Sacerdote_Listar">
+    <ElementType Name="sp_Sacerdote_ListarResult">
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Apodo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Sacerdote_Update" Method="sp_Sacerdote_Update">
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apodo" Parameter="apodo" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_Aprobar" Method="sp_SolicitudAyuda_Aprobar">
+    <Parameter Name="idSolicitudAyuda" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_Delete" Method="sp_SolicitudAyuda_Delete">
+    <Parameter Name="idSolicitudAyuda" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_Insert" Method="sp_SolicitudAyuda_Insert">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MontoSolicitado" Parameter="montoSolicitado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_Listar" Method="sp_SolicitudAyuda_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_SolicitudAyuda_ListarResult">
+      <Column Name="idSolicitudAyuda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="Parroquia" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoSolicitado" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_Update" Method="sp_SolicitudAyuda_Update">
+    <Parameter Name="idSolicitudAyuda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MontoSolicitado" Parameter="montoSolicitado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(600)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_Delete" Method="sp_SolicitudSacramental_Delete">
+    <Parameter Name="idSolicitudSacramental" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_Insert" Method="sp_SolicitudSacramental_Insert">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sacramento" Parameter="sacramento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaSolicitada" Parameter="fechaSolicitada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFinal" Parameter="fechaFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Observaciones" Parameter="observaciones" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_Listar" Method="sp_SolicitudSacramental_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_SolicitudSacramental_ListarResult">
+      <Column Name="idSolicitudSacramental" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="Sacramento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSolicitada" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="FechaFinal" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_Update" Method="sp_SolicitudSacramental_Update">
+    <Parameter Name="idSolicitudSacramental" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sacramento" Parameter="sacramento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaSolicitada" Parameter="fechaSolicitada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaFinal" Parameter="fechaFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Observaciones" Parameter="observaciones" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Usuario_Delete" Method="sp_Usuario_Delete">
+    <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Usuario_Insert" Method="sp_Usuario_Insert">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Usuario_Listar" Method="sp_Usuario_Listar">
+    <Parameter Name="Filtro" Parameter="filtro" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_Usuario_ListarResult">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Persona" Type="System.String" DbType="VarChar(301)" CanBeNull="true" />
+      <Column Name="TipoUsuario" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Usuario_Update" Method="sp_Usuario_Update">
+    <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PasswordHash" Parameter="passwordHash" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UsuarioRolSistema_Delete" Method="sp_UsuarioRolSistema_Delete">
+    <Parameter Name="idUsuarioRolSistema" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UsuarioRolSistema_Insert" Method="sp_UsuarioRolSistema_Insert">
+    <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRolSistema" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Capilla_BuscarPorId" Method="sp_Capilla_BuscarPorId">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Capilla_BuscarPorIdResult">
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaicoCoordinador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_CEB_BuscarPorId" Method="sp_CEB_BuscarPorId">
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_CEB_BuscarPorIdResult">
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EventoCapilla_BuscarPorId" Method="sp_EventoCapilla_BuscarPorId">
+    <Parameter Name="idEventoCapilla" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_EventoCapilla_BuscarPorIdResult">
+      <Column Name="idEventoCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EventoParroquial_BuscarPorId" Method="sp_EventoParroquial_BuscarPorId">
+    <Parameter Name="idEventoParroquial" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_EventoParroquial_BuscarPorIdResult">
+      <Column Name="idEventoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FondoCapilla_BuscarPorId" Method="sp_FondoCapilla_BuscarPorId">
+    <Parameter Name="idFondoCapilla" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_FondoCapilla_BuscarPorIdResult">
+      <Column Name="idFondoCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FondoParroquial_BuscarPorId" Method="sp_FondoParroquial_BuscarPorId">
+    <Parameter Name="idFondoParroquial" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_FondoParroquial_BuscarPorIdResult">
+      <Column Name="idFondoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Formacion_BuscarPorId" Method="sp_Formacion_BuscarPorId">
+    <Parameter Name="idFormacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Formacion_BuscarPorIdResult">
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioMisa_BuscarPorId" Method="sp_HorarioMisa_BuscarPorId">
+    <Parameter Name="IdHorarioMisa" Parameter="idHorarioMisa" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioMisa_BuscarPorIdResult">
+      <Column Name="idHorarioMisa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaSemana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Laico_BuscarPorId" Method="sp_Laico_BuscarPorId">
+    <Parameter Name="IdLaico" Parameter="idLaico" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Laico_BuscarPorIdResult">
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LaicoFormacion_BuscarPorId" Method="sp_LaicoFormacion_BuscarPorId">
+    <Parameter Name="IdLaicoFormacion" Parameter="idLaicoFormacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_LaicoFormacion_BuscarPorIdResult">
+      <Column Name="idLaicoFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LaicoRolFuncional_BuscarPorId" Method="sp_LaicoRolFuncional_BuscarPorId">
+    <Parameter Name="IdLaicoRolFuncional" Parameter="idLaicoRolFuncional" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_LaicoRolFuncional_BuscarPorIdResult">
+      <Column Name="idLaicoRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MiembroCEB_BuscarPorId" Method="sp_MiembroCEB_BuscarPorId">
+    <Parameter Name="IdMiembroCEB" Parameter="idMiembroCEB" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_MiembroCEB_BuscarPorIdResult">
+      <Column Name="idMiembroCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Misa_BuscarPorId" Method="sp_Misa_BuscarPorId">
+    <Parameter Name="IdMisa" Parameter="idMisa" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Misa_BuscarPorIdResult">
+      <Column Name="idMisa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MontoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSolicitudSacramental" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MovimientoCEB_BuscarPorId" Method="sp_MovimientoCEB_BuscarPorId">
+    <Parameter Name="IdMovimientoCEB" Parameter="idMovimientoCEB" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_MovimientoCEB_BuscarPorIdResult">
+      <Column Name="idMovimientoCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCEB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="idFondoCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEventoCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_MovimientoParroquial_BuscarPorId" Method="sp_MovimientoParroquial_BuscarPorId">
+    <Parameter Name="IdMovimientoParroquial" Parameter="idMovimientoParroquial" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_MovimientoParroquial_BuscarPorIdResult">
+      <Column Name="idMovimientoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFondoParroquial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="idEventoParroquial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Parroquia_BuscarPorId" Method="sp_Parroquia_BuscarPorId">
+    <Parameter Name="IdParroquia" Parameter="idParroquia" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Parroquia_BuscarPorIdResult">
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Zona" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RolFuncional_BuscarPorId" Method="sp_RolFuncional_BuscarPorId">
+    <Parameter Name="IdRolFuncional" Parameter="idRolFuncional" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_RolFuncional_BuscarPorIdResult">
+      <Column Name="idRolFuncional" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RolSistema_BuscarPorId" Method="sp_RolSistema_BuscarPorId">
+    <Parameter Name="IdRolSistema" Parameter="idRolSistema" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_RolSistema_BuscarPorIdResult">
+      <Column Name="idRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Sacerdote_BuscarPorId" Method="sp_Sacerdote_BuscarPorId">
+    <Parameter Name="IdSacerdote" Parameter="idSacerdote" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Sacerdote_BuscarPorIdResult">
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Apodo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SolicitudAyuda_BuscarPorId" Method="sp_SolicitudAyuda_BuscarPorId">
+    <Parameter Name="IdSolicitudAyuda" Parameter="idSolicitudAyuda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_SolicitudAyuda_BuscarPorIdResult">
+      <Column Name="idSolicitudAyuda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idParroquia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoSolicitado" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(600)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_BuscarPorId" Method="sp_SolicitudSacramental_BuscarPorId">
+    <Parameter Name="IdSolicitudSacramental" Parameter="idSolicitudSacramental" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_SolicitudSacramental_BuscarPorIdResult">
+      <Column Name="idSolicitudSacramental" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sacramento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSolicitada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFinal" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Usuario_BuscarPorId" Method="sp_Usuario_BuscarPorId">
+    <Parameter Name="IdUsuario" Parameter="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Usuario_BuscarPorIdResult">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordHash" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UsuarioRolSistema_BuscarPorId" Method="sp_UsuarioRolSistema_BuscarPorId">
+    <Parameter Name="IdUsuarioRolSistema" Parameter="idUsuarioRolSistema" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_UsuarioRolSistema_BuscarPorIdResult">
+      <Column Name="idUsuarioRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRolSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Formacion_Delete" Method="sp_Formacion_Delete">
+    <Parameter Name="idFormacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CEB_Insert" Method="sp_CEB_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="FechaCreacion" Parameter="fechaCreacion" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Usuario_BuscarPorMail" Method="sp_Usuario_BuscarPorMail">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="sp_Usuario_BuscarPorMailResult">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordHash" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="idLaico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSacerdote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Laico_Insert" Method="sp_Laico_Insert">
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_Laico_InsertResult">
+      <Column Name="idLaico" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Capilla_Insert" Method="sp_Capilla_Insert">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="idParroquia" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Capilla_InsertResult">
+      <Column Name="IdCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Capilla_Delete" Method="sp_Capilla_Delete">
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CEB_Update" Method="sp_CEB_Update">
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="FechaCreacion" Parameter="fechaCreacion" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CEB_Delete" Method="sp_CEB_Delete">
+    <Parameter Name="idCEB" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_HorarioMisa_Delete" Method="sp_HorarioMisa_Delete">
+    <Parameter Name="idHorarioMisa" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reporte_Laico_Detalle" Method="sp_Reporte_Laico_Detalle">
+    <Parameter Name="FiltroLaico" Parameter="filtroLaico" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="IdCapilla" Parameter="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdFormacion" Parameter="idFormacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoFormacion" Parameter="estadoFormacion" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_Reporte_Laico_DetalleResult">
+      <Column Name="idLaico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laico" Type="System.String" DbType="VarChar(301) NOT NULL" CanBeNull="false" />
+      <Column Name="idCapilla" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idFormacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Formacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstadoFormacion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaInicioFormacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFinFormacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RolFuncional" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SolicitudSacramental_Insert_ConMisa" Method="sp_SolicitudSacramental_Insert_ConMisa">
+    <Parameter Name="idLaico" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sacramento" Parameter="sacramento" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaSolicitada" Parameter="fechaSolicitada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Observaciones" Parameter="observaciones" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="idMisaExistente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCapilla" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSacerdote" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaMisa" Parameter="fechaMisa" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MontoRecaudado" Parameter="montoRecaudado" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="EstadoMisa" Parameter="estadoMisa" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C8D4B39-0973-4A86-92E2-12CCA1A556AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Datos">
+      <HintPath>..\Datos\bin\Debug\Datos.dll</HintPath>
+    </Reference>
+    <Reference Include="Entidades">
+      <HintPath>..\Entidades\bin\Debug\Entidades.dll</HintPath>
+    </Reference>
+    <Reference Include="Logica">
+      <HintPath>..\Logica\bin\Debug\Logica.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMINISTRACION\EstadoFormulario.cs" />
+    <Compile Include="ADMINISTRACION\FormHelper.cs" />
+    <Compile Include="ADMINISTRACION\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRACION\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRACION\ListaRoles.cs" />
+    <Compile Include="Comunidades\frmAdminCEB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comunidades\frmAdminCEB.Designer.cs">
+      <DependentUpon>frmAdminCEB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmConf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmConf.Designer.cs">
+      <DependentUpon>frmConf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frmAdminEventoCapilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frmAdminEventoCapilla.Designer.cs">
+      <DependentUpon>frmAdminEventoCapilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frmAdminMisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frmAdminMisa.Designer.cs">
+      <DependentUpon>frmAdminMisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formacion\frmCRLaicoFormacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formacion\frmCRLaicoFormacion.Designer.cs">
+      <DependentUpon>frmCRLaicoFormacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formacion\frmFormacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formacion\frmFormacion.Designer.cs">
+      <DependentUpon>frmFormacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formacion\frmLaicoFormacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formacion\frmLaicoFormacion.Designer.cs">
+      <DependentUpon>frmLaicoFormacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\frmLaico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas\frmLaico.Designer.cs">
+      <DependentUpon>frmLaico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CRLaicoFormacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRLaicoFormacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\DBC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmAdminRolSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmAdminRolSistema.Designer.cs">
+      <DependentUpon>frmAdminRolSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ubicaciones\frmAdminCapilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ubicaciones\frmAdminCapilla.Designer.cs">
+      <DependentUpon>frmAdminCapilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicaciones\frmParroquia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ubicaciones\frmParroquia.Designer.cs">
+      <DependentUpon>frmParroquia.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ADMINISTRACION\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comunidades\frmAdminCEB.resx">
+      <DependentUpon>frmAdminCEB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmConf.resx">
+      <DependentUpon>frmConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frmAdminEventoCapilla.resx">
+      <DependentUpon>frmAdminEventoCapilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frmAdminMisa.resx">
+      <DependentUpon>frmAdminMisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formacion\frmCRLaicoFormacion.resx">
+      <DependentUpon>frmCRLaicoFormacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formacion\frmFormacion.resx">
+      <DependentUpon>frmFormacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formacion\frmLaicoFormacion.resx">
+      <DependentUpon>frmLaicoFormacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas\frmLaico.resx">
+      <DependentUpon>frmLaico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CRLaicoFormacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRLaicoFormacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmAdminRolSistema.resx">
+      <DependentUpon>frmAdminRolSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ubicaciones\frmAdminCapilla.resx">
+      <DependentUpon>frmAdminCapilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ubicaciones\frmParroquia.resx">
+      <DependentUpon>frmParroquia.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\DBC.xsc">
+      <DependentUpon>DBC.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DBC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DBC.xss">
+      <DependentUpon>DBC.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Finanzas\" />
+    <Folder Include="Roles\" />
+    <Folder Include="Solicitudes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

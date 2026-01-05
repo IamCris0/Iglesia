@@ -1,0 +1,24 @@
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Logica.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Logica.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Datos.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Entidades.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Datos.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Datos.dll.config
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\bin\Debug\Entidades.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\obj\Debug\Logica.csproj.Up2Date
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\obj\Debug\Logica.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Logica\obj\Debug\Logica.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Logica.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Logica.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Datos.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Entidades.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Datos.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Datos.dll.config
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\bin\Debug\Entidades.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\obj\Debug\Logica.csproj.Up2Date
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\obj\Debug\Logica.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Logica\obj\Debug\Logica.pdb

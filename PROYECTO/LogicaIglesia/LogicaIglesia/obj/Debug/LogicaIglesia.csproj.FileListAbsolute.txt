@@ -1,0 +1,11 @@
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.Properties.Resources.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.csproj.GenerateResource.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\bin\Debug\LogicaIglesia.exe.config
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\bin\Debug\LogicaIglesia.exe
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\bin\Debug\LogicaIglesia.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.exe
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.exe.config
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\LogicaIglesia\obj\Debug\LogicaIglesia.Form1.resources

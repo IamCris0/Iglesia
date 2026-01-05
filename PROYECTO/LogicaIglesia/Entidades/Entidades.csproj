@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67F09456-0F70-4953-BA20-002FC4E69A78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entidades</RootNamespace>
+    <AssemblyName>Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comunidades\CEB.cs" />
+    <Compile Include="Comunidades\MiembroCEB.cs" />
+    <Compile Include="Comunidades\Vistas\VCEB.cs" />
+    <Compile Include="Configuracion\HorarioMisa.cs" />
+    <Compile Include="Configuracion\Vistas\VHorarioMisa.cs" />
+    <Compile Include="Eventos\EventoCapilla.cs" />
+    <Compile Include="Eventos\EventoParroquial.cs" />
+    <Compile Include="Eventos\Misa.cs" />
+    <Compile Include="Eventos\Vistas\VEventoCapilla.cs" />
+    <Compile Include="Eventos\Vistas\VEventoParroquial.cs" />
+    <Compile Include="Eventos\Vistas\VMisa.cs" />
+    <Compile Include="Finanzas\FondoCapilla.cs" />
+    <Compile Include="Finanzas\FondoParroquial.cs" />
+    <Compile Include="Finanzas\MovimientoCEB.cs" />
+    <Compile Include="Finanzas\MovimientoParroquial.cs" />
+    <Compile Include="Finanzas\Vistas\VFondoCapilla.cs" />
+    <Compile Include="Finanzas\Vistas\VFondoParroquial.cs" />
+    <Compile Include="Finanzas\Vistas\VMovimientoCEB.cs" />
+    <Compile Include="Finanzas\Vistas\VMovimientoParroquial.cs" />
+    <Compile Include="Formacion\Formacion.cs" />
+    <Compile Include="Formacion\LaicoFormacion.cs" />
+    <Compile Include="Formacion\Vistas\VLaicoFormacion.cs" />
+    <Compile Include="Personas\MiembroCEB.cs" />
+    <Compile Include="Personas\Vistas\VLaico.cs" />
+    <Compile Include="Personas\Vistas\VMiembroCEB.cs" />
+    <Compile Include="Reportes\VReporteLaicoDetalle.cs" />
+    <Compile Include="Roles\LaicoRolFuncional.cs" />
+    <Compile Include="Personas\Laico.cs" />
+    <Compile Include="Personas\Sacerdote.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\RolFuncional.cs" />
+    <Compile Include="Roles\Vistas\VLaicoRolFuncional.cs" />
+    <Compile Include="Seguridad\RolSistema.cs" />
+    <Compile Include="Seguridad\Usuario.cs" />
+    <Compile Include="Seguridad\UsuarioRolSistema.cs" />
+    <Compile Include="Seguridad\Vistas\VUsuario.cs" />
+    <Compile Include="Solicitudes\SolicitudAyuda.cs" />
+    <Compile Include="Solicitudes\SolicitudSacramental.cs" />
+    <Compile Include="Solicitudes\Vistas\VSolicitudAyuda.cs" />
+    <Compile Include="Solicitudes\Vistas\VSolicitudSacramental.cs" />
+    <Compile Include="Ubicaciones\Capilla.cs" />
+    <Compile Include="Ubicaciones\Parroquia.cs" />
+    <Compile Include="Ubicaciones\Vistas\VCapilla.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

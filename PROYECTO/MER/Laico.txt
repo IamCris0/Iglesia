@@ -1,0 +1,3 @@
+Laicos
+id Persona
+Roles (Conserje - Cantante - Guitarrista - LectorLiturgico)

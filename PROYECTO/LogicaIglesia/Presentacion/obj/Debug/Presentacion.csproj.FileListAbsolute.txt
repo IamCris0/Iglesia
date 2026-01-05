@@ -1,0 +1,73 @@
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.ADMINISTRACION.frmAdmin.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Datos.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Entidades.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Logica.dll
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Datos.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Datos.dll.config
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\bin\Debug\Logica.pdb
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Ubicaciones.frmParroquia.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Formacion.frmFormacion.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Seguridad.frmAdminRolSistema.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Ubicaciones.frmAdminCapilla.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Comunidades.frmAdminCEB.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Eventos.frmAdminEventoCapilla.resources
+C:\Users\ADMIN\Documents\C#\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Personas.frmLaico.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Presentacion.exe
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Presentacion.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Datos.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Entidades.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Logica.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Datos.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Datos.dll.config
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Entidades.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Logica.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.ADMINISTRACION.frmAdmin.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Comunidades.frmAdminCEB.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Eventos.frmAdminEventoCapilla.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Formacion.frmFormacion.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Personas.frmLaico.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Seguridad.frmAdminRolSistema.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Ubicaciones.frmAdminCapilla.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Ubicaciones.frmParroquia.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.exe
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.pdb
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Eventos.frmAdminMisa.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Configuracion.frmConf.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Formacion.frmLaicoFormacion.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.Formacion.frmCRLaicoFormacion.resources
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\Presentacion.exe.config
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.Shared.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\bin\Debug\stdole.dll
+C:\PROGRAMACION AVANZADA\PROYECTO\LogicaIglesia\Presentacion\obj\Debug\Presentacion.exe.config

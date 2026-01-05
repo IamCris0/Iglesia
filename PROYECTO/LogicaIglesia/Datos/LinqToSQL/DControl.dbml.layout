@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 34" name="DControl">
+  <DataContextMoniker Name="/DControlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7a313c59-8bda-442f-95f4-097f26084847" absoluteBounds="3.5, 17.25, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DControlDataContext/Capilla" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26fe773c-9762-419d-9516-8816bb549d8b" absoluteBounds="3.515, 17.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88ea2610-656f-44ed-bef6-7226043ef40c" absoluteBounds="14.75, 19.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DControlDataContext/UsuarioRolSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51745957-fad9-49bf-8f52-a114d159bf34" absoluteBounds="14.765, 20.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd2b95dd-5840-4a24-a49c-8974a6d8d28e" absoluteBounds="6.25, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DControlDataContext/CEB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2fca233-8b5c-4548-b7cd-5ed1844625bc" absoluteBounds="6.265, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed20b7c3-543f-4436-9505-e191d4def34f" absoluteBounds="6.25, 22.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DControlDataContext/EventoCapilla" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b844f1ca-8551-444d-ba65-6884ecb3d503" absoluteBounds="6.265, 22.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96540461-d6fd-4192-8455-e5d5b4a2d829" absoluteBounds="3.5, 31.625, 2, 2.155499674479163">
+      <DataClassMoniker Name="/DControlDataContext/EventoParroquial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20f2b4a0-721b-4f33-bc4e-ad28241e11e0" absoluteBounds="3.515, 32.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9bcdb0a-3146-4a39-88b7-50dea7921a3a" absoluteBounds="6.25, 14.375, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/DControlDataContext/FondoCapilla" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b332a4aa-fd4e-4605-9ab5-dc783e0b8ea4" absoluteBounds="6.265, 14.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2fe89c45-495c-4e79-8e8a-b6a10ff66e7f" absoluteBounds="3.5, 29.125, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DControlDataContext/FondoParroquial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a53b87ae-224b-4e4c-9776-8f30e57b7314" absoluteBounds="3.515, 29.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7eac7d4e-33cf-434c-9af5-cf3da8fe11cd" absoluteBounds="9.25, 12.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DControlDataContext/Formacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9501af1f-d6d4-47c2-bb92-70eb56f0d247" absoluteBounds="9.265, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5fbdf5db-a063-474b-b2a1-21508d82a7c9" absoluteBounds="6.25, 16.875, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DControlDataContext/HorarioMisa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15d8626e-f355-40e3-bd03-627999b06b2a" absoluteBounds="6.265, 17.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" absoluteBounds="6.25, 19.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DControlDataContext/Laico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53403ec3-10b4-437a-8edd-393f9eca940c" absoluteBounds="6.265, 19.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f44a3087-9265-4312-9d11-4a57e630e6c1" absoluteBounds="12, 16.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DControlDataContext/LaicoFormacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5239fb7-8a36-4383-a347-3f328a18f605" absoluteBounds="12.015, 16.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aea5b0c3-02fb-44d9-9f15-7fbe3c7a474d" absoluteBounds="9, 22.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DControlDataContext/LaicoRolFuncional" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2487ee16-30f9-48ba-9fa4-9b8b9c55e0f4" absoluteBounds="9.015, 23.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7184469d-ecca-4345-9d40-83db8125e7bf" absoluteBounds="9, 15.75, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/DControlDataContext/MiembroCEB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5d99e08-0638-4252-bd3e-8b0395cc1854" absoluteBounds="9.015, 16.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7d48880-2532-4560-b438-0e2216e9e799" absoluteBounds="11.75, 25.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DControlDataContext/Misa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bab3cfa9-873d-40eb-ba24-a07b9b8991c3" absoluteBounds="11.765, 25.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f977b80-ff3f-407a-82f3-f2ca9135957a" absoluteBounds="9, 18.875, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DControlDataContext/MovimientoCEB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca214e0a-f24f-4993-9514-d13c9139ceba" absoluteBounds="9.015, 19.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24f26a9d-aa50-4681-a696-f881e938cba0" absoluteBounds="6.25, 30.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DControlDataContext/MovimientoParroquial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4eea43ec-95dc-491a-b532-f62fcfc617c4" absoluteBounds="6.265, 30.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9865f101-e176-4731-af07-0ddbeb9ce5e9" absoluteBounds="0.75, 17.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DControlDataContext/Parroquia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bf22b4e-9868-4e0f-a7f1-2747570f94d1" absoluteBounds="0.765, 17.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93397a13-26d5-4f0c-83af-605444f2c27f" absoluteBounds="6.25, 25.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DControlDataContext/RolFuncional" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c15ff09e-891c-4bf8-b32f-db3258833a01" absoluteBounds="6.265, 26.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f34be275-bcec-4f3a-8d3d-829b7d538f90" absoluteBounds="12, 13.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DControlDataContext/RolSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d075442-9ad9-4813-bde6-6ff7cc618153" absoluteBounds="12.015, 14.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ee1e1f8-97c9-4b1b-b412-354c88019724" absoluteBounds="9.25, 9.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DControlDataContext/Sacerdote" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3224506e-fbfa-4261-af22-4559db7eafe3" absoluteBounds="9.265, 10.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="181ca7dd-a812-425d-92da-983e14342ee0" absoluteBounds="12, 22.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DControlDataContext/SolicitudAyuda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2662dbb-48b7-4165-b02c-1deb2f36cc07" absoluteBounds="12.015, 22.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ec1d0d4-2f7d-490d-adcc-360f4fcc51fc" absoluteBounds="9, 29.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DControlDataContext/SolicitudSacramental" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d200e28e-43ac-4330-90ce-726581c6d1df" absoluteBounds="9.015, 30.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdb889dd-84d1-48cc-98a9-d7c1376c3918" absoluteBounds="12, 19.5, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DControlDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c7ae2ef-4aad-4866-9586-77eb23f8a3c1" absoluteBounds="12.015, 19.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 17.25); (4.5 : 12.6354484049479); (6.25 : 12.6354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_CEB" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="fd2b95dd-5840-4a24-a49c-8974a6d8d28e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 19.0208968098958); (4.5 : 23.3277498372396); (5.21354541666667 : 23.3277498372396 : JumpStart); (5.38021208333333 : 23.3277498372396 : JumpEnd); (6.25 : 23.3277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_EventoCapilla" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="ed20b7c3-543f-4436-9505-e191d4def34f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 17.25); (5.0312525 : 15.2604484049479); (6.25 : 15.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_FondoCapilla" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="c9bcdb0a-3146-4a39-88b7-50dea7921a3a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 17.9479484049479); (6.25 : 17.9479484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_HorarioMisa" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="5fbdf5db-a063-474b-b2a1-21508d82a7c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 20.4815991210938); (5.38021208333333 : 20.4815991210938 : JumpStart); (5.21354541666667 : 20.4815991210938 : JumpEnd); (5.0312525 : 20.4815991210938); (5.0312525 : 19.0208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_Capilla" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 19.0208968098958); (3.9687475 : 19.9595470605469); (5.21354541666667 : 19.9595470605469 : JumpStart); (5.38021208333333 : 19.9595470605469 : JumpEnd); (6.25 : 19.9595470605469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_Laico" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.15625 : 14.1362939453125); (11.15625 : 18.0232975260417); (12 : 18.0232975260417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Formacion/Formacion_LaicoFormacion" />
+      <nodes>
+        <classShapeMoniker Id="7eac7d4e-33cf-434c-9af5-cf3da8fe11cd" />
+        <classShapeMoniker Id="f44a3087-9265-4312-9d11-4a57e630e6c1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 20.4815991210938); (8.75 : 20.4815991210938); (8.75 : 18.7131982421875); (8.76041666666667 : 18.7131982421875 : JumpStart); (8.92708333333333 : 18.7131982421875 : JumpEnd); (11.5416666666667 : 18.7131982421875 : JumpStart); (11.7083333333333 : 18.7131982421875 : JumpEnd); (11.7604166666667 : 18.7131982421875 : JumpStart); (11.9270833333333 : 18.7131982421875 : JumpEnd); (13 : 18.7131982421875); (13 : 18.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_LaicoFormacion" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="f44a3087-9265-4312-9d11-4a57e630e6c1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.22885786508413 : 21.4631982421875); (8.71875 : 21.9530903771034); (8.71875 : 23.4431469726563); (9 : 23.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_LaicoRolFuncional" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="aea5b0c3-02fb-44d9-9f15-7fbe3c7a474d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 12.21875); (9.09375 : 12.21875); (9.09375 : 15.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/CEB/CEB_MiembroCEB" />
+      <nodes>
+        <classShapeMoniker Id="fd2b95dd-5840-4a24-a49c-8974a6d8d28e" />
+        <classShapeMoniker Id="7184469d-ecca-4345-9d40-83db8125e7bf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 19.501509152494); (8.625 : 19.126509152494); (8.625 : 16.6354484049479); (8.68618828465547 : 16.6354484049479 : JumpStart); (8.85285495132213 : 16.6354484049479 : JumpEnd); (9 : 16.6354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_MiembroCEB" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="7184469d-ecca-4345-9d40-83db8125e7bf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 19.0208968098958); (5.29687875 : 27.3646468098958); (11.75 : 27.3646468098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Capilla/Capilla_Misa" />
+      <nodes>
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+        <classShapeMoniker Id="b7d48880-2532-4560-b438-0e2216e9e799" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 13.4595955357071); (8.6875 : 13.8970955357071); (8.6875 : 19.6783000605469); (9 : 19.6783000605469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/CEB/CEB_MovimientoCEB" />
+      <nodes>
+        <classShapeMoniker Id="fd2b95dd-5840-4a24-a49c-8974a6d8d28e" />
+        <classShapeMoniker Id="4f977b80-ff3f-407a-82f3-f2ca9135957a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 22.3115374615385); (8.8125 : 21.7490374615385); (8.8125 : 20.8521996139323); (9 : 20.8521996139323)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/EventoCapilla/EventoCapilla_MovimientoCEB" />
+      <nodes>
+        <classShapeMoniker Id="ed20b7c3-543f-4436-9505-e191d4def34f" />
+        <classShapeMoniker Id="4f977b80-ff3f-407a-82f3-f2ca9135957a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 16.1159267869591); (8.84375 : 16.7096767869591); (8.84375 : 19.2453980302734); (9 : 19.2453980302734)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/FondoCapilla/FondoCapilla_MovimientoCEB" />
+      <nodes>
+        <classShapeMoniker Id="c9bcdb0a-3146-4a39-88b7-50dea7921a3a" />
+        <classShapeMoniker Id="4f977b80-ff3f-407a-82f3-f2ca9135957a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 30.6354484049479); (6.25 : 30.6354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/FondoParroquial/FondoParroquial_MovimientoParroquial" />
+      <nodes>
+        <classShapeMoniker Id="2fe89c45-495c-4e79-8e8a-b6a10ff66e7f" />
+        <classShapeMoniker Id="24f26a9d-aa50-4681-a696-f881e938cba0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 32.0777498372396); (6.25 : 32.0777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/EventoParroquial/EventoParroquial_MovimientoParroquial" />
+      <nodes>
+        <classShapeMoniker Id="96540461-d6fd-4192-8455-e5d5b4a2d829" />
+        <classShapeMoniker Id="24f26a9d-aa50-4681-a696-f881e938cba0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 18.0681469726563); (3.5 : 18.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Parroquia/Parroquia_Capilla" />
+      <nodes>
+        <classShapeMoniker Id="9865f101-e176-4731-af07-0ddbeb9ce5e9" />
+        <classShapeMoniker Id="7a313c59-8bda-442f-95f4-097f26084847" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 18.7612939453125); (1.75 : 32.7027498372396); (3.5 : 32.7027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Parroquia/Parroquia_EventoParroquial" />
+      <nodes>
+        <classShapeMoniker Id="9865f101-e176-4731-af07-0ddbeb9ce5e9" />
+        <classShapeMoniker Id="96540461-d6fd-4192-8455-e5d5b4a2d829" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 18.7612939453125); (2.2812525 : 30.0104484049479); (3.5 : 30.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Parroquia/Parroquia_FondoParroquial" />
+      <nodes>
+        <classShapeMoniker Id="9865f101-e176-4731-af07-0ddbeb9ce5e9" />
+        <classShapeMoniker Id="2fe89c45-495c-4e79-8e8a-b6a10ff66e7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 26.4431469726563); (10 : 26.4431469726563); (10 : 24.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/RolFuncional/RolFuncional_LaicoRolFuncional" />
+      <nodes>
+        <classShapeMoniker Id="93397a13-26d5-4f0c-83af-605444f2c27f" />
+        <classShapeMoniker Id="aea5b0c3-02fb-44d9-9f15-7fbe3c7a474d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 14.4431469726562); (15.75 : 14.4431469726562); (15.75 : 19.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/RolSistema/RolSistema_UsuarioRolSistema" />
+      <nodes>
+        <classShapeMoniker Id="f34be275-bcec-4f3a-8d3d-829b7d538f90" />
+        <classShapeMoniker Id="88ea2610-656f-44ed-bef6-7226043ef40c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 10.4142976888021); (11.84375 : 10.4142976888021); (11.84375 : 25.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Sacerdote/Sacerdote_Misa" />
+      <nodes>
+        <classShapeMoniker Id="0ee1e1f8-97c9-4b1b-b412-354c88019724" />
+        <classShapeMoniker Id="b7d48880-2532-4560-b438-0e2216e9e799" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 21.4465855647536); (8.6416126774339 : 21.8381982421875); (11.7604166666667 : 21.8381982421875 : JumpStart); (11.9270833333333 : 21.8381982421875 : JumpEnd); (13 : 21.8381982421875); (13 : 22.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_SolicitudAyuda" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="181ca7dd-a812-425d-92da-983e14342ee0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 18.7612939453125); (1.2187475 : 24.4992496744792); (2.19791916666667 : 24.4992496744792 : JumpStart); (2.36458583333333 : 24.4992496744792 : JumpEnd); (5.21354541666667 : 24.4992496744792 : JumpStart); (5.38021208333333 : 24.4992496744792 : JumpEnd); (8.57291666666667 : 24.4992496744792 : JumpStart); (8.73958333333333 : 24.4992496744792 : JumpEnd); (9.91666666666667 : 24.4992496744792 : JumpStart); (10.0833333333333 : 24.4992496744792 : JumpEnd); (11.7604166666667 : 24.4992496744792 : JumpStart); (11.9270833333333 : 24.4992496744792 : JumpEnd); (12 : 24.4992496744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Parroquia/Parroquia_SolicitudAyuda" />
+      <nodes>
+        <classShapeMoniker Id="9865f101-e176-4731-af07-0ddbeb9ce5e9" />
+        <classShapeMoniker Id="181ca7dd-a812-425d-92da-983e14342ee0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5 : 29.625); (10.5 : 25.9090734863281); (11.75 : 25.9090734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/SolicitudSacramental/SolicitudSacramental_Misa" />
+      <nodes>
+        <classShapeMoniker Id="9ec1d0d4-2f7d-490d-adcc-360f4fcc51fc" />
+        <classShapeMoniker Id="b7d48880-2532-4560-b438-0e2216e9e799" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.22130710261418 : 21.4631982421875); (8.65625 : 21.8981411395733); (8.65625 : 30.7027498372396); (9 : 30.7027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_SolicitudSacramental" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="9ec1d0d4-2f7d-490d-adcc-360f4fcc51fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 20.4431469726563); (14.75 : 20.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Usuario/Usuario_UsuarioRolSistema" />
+      <nodes>
+        <classShapeMoniker Id="bdb889dd-84d1-48cc-98a9-d7c1376c3918" />
+        <classShapeMoniker Id="88ea2610-656f-44ed-bef6-7226043ef40c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 21.4088317524038); (8.5 : 21.6588317524038); (8.5 : 21.6458968098958); (11.625 : 21.6458968098958); (12 : 21.2708968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Laico/Laico_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="2fb840a9-c781-46f0-8c74-1e96ac53ab27" />
+        <classShapeMoniker Id="bdb889dd-84d1-48cc-98a9-d7c1376c3918" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 11.2035953776042); (11.625 : 11.5785953776042); (11.625 : 20.3541964049479); (11.7604166666667 : 20.3541964049479 : JumpStart); (11.9270833333333 : 20.3541964049479 : JumpEnd); (12 : 20.3541964049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DControlDataContext/Sacerdote/Sacerdote_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="0ee1e1f8-97c9-4b1b-b412-354c88019724" />
+        <classShapeMoniker Id="bdb889dd-84d1-48cc-98a9-d7c1376c3918" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
