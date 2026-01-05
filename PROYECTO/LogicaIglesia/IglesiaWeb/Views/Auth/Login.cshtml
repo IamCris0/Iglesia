@@ -1,0 +1,143 @@
+@model SistemaParroquial.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+    Layout = "_LayoutLogin";
+}
+
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <i class="fas fa-church fa-3x text-primary mb-3"></i>
+            <h2>Sistema Parroquial</h2>
+            <p class="text-muted">Iniciar Sesión</p>
+        </div>
+
+        <div class="login-body">
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    @TempData["Mensaje"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <form asp-action="Login" asp-controller="Auth" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                
+                <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">
+                        <i class="fas fa-envelope"></i> 
+                        @Html.DisplayNameFor(m => m.Email)
+                    </label>
+                    <input asp-for="Email" 
+                           class="form-control form-control-lg" 
+                           placeholder="correo@ejemplo.com" 
+                           autofocus />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">
+                        <i class="fas fa-lock"></i> 
+                        @Html.DisplayNameFor(m => m.Password)
+                    </label>
+                    <input asp-for="Password" 
+                           class="form-control form-control-lg" 
+                           placeholder="••••••••" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="RememberMe" 
+                           class="form-check-input" 
+                           type="checkbox" />
+                    <label asp-for="RememberMe" class="form-check-label">
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-center mt-4">
+                <a href="#" class="text-muted">
+                    <small>¿Olvidaste tu contraseña?</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <small class="text-muted">
+                Sistema de Gestión Parroquial &copy; 2026
+            </small>
+        </div>
+    </div>
+</div>
+
+<style>
+    .login-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+    }
+
+    .login-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        max-width: 450px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .login-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .login-header i {
+        animation: bounce 2s infinite;
+    }
+
+    @@keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .login-body {
+        padding: 40px;
+    }
+
+    .login-footer {
+        background: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .form-control-lg {
+        border-radius: 10px;
+    }
+
+    .btn-lg {
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+    }
+</style>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

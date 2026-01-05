@@ -1,0 +1,197 @@
+@model SistemaParroquial.Models.Capilla
+
+@{
+    ViewData["Title"] = "Detalles de Capilla";
+}
+
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <h2><i class="fas fa-church"></i> @Model.Nombre</h2>
+        </div>
+        <div class="col-md-4 text-end">
+            <a asp-action="Edit" asp-route-id="@Model.IdCapilla" class="btn btn-warning">
+                <i class="fas fa-edit"></i> Editar
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <!-- Información Principal -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-info-circle"></i> Información General</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Nombre:</dt>
+                        <dd class="col-sm-8">@Model.Nombre</dd>
+
+                        <dt class="col-sm-4">Dirección:</dt>
+                        <dd class="col-sm-8">@Model.Direccion</dd>
+
+                        <dt class="col-sm-4">Parroquia:</dt>
+                        <dd class="col-sm-8">@Model.Parroquia?.Nombre</dd>
+
+                        <dt class="col-sm-4">Coordinador:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.Coordinador != null)
+                            {
+                                <span class="badge bg-success">@Model.Coordinador.NombreCompleto</span>
+                                <br>
+                                <small class="text-muted">
+                                    <i class="fas fa-phone"></i> @Model.Coordinador.Telefono
+                                </small>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">Sin asignar</span>
+                                <br>
+                                <a asp-action="AsignarCoordinador" asp-route-id="@Model.IdCapilla" class="btn btn-sm btn-primary mt-2">
+                                    Asignar Coordinador
+                                </a>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-chart-bar"></i> Estadísticas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <h3>@Model.Misas?.Count</h3>
+                            <small class="text-muted">Misas</small>
+                        </div>
+                        <div class="col-4">
+                            <h3>@Model.Eventos?.Count</h3>
+                            <small class="text-muted">Eventos</small>
+                        </div>
+                        <div class="col-4">
+                            <h3>@Model.HorariosMisa?.Count</h3>
+                            <small class="text-muted">Horarios</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Horarios de Misa -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-clock"></i> Horarios de Misa
+                    </h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.HorariosMisa != null && Model.HorariosMisa.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Día</th>
+                                        <th>Hora</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var horario in Model.HorariosMisa.OrderBy(h => h.DiaSemana))
+                                    {
+                                        <tr>
+                                            <td>@horario.NombreDia</td>
+                                            <td><strong>@horario.Hora.ToString(@"hh\:mm")</strong></td>
+                                            <td>
+                                                @if (horario.Activo == "SI")
+                                                {
+                                                    <span class="badge bg-success">Activo</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-secondary">Inactivo</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">No hay horarios configurados.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Próximas Misas -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header bg-warning">
+                    <h5 class="mb-0">
+                        <i class="fas fa-calendar-alt"></i> Próximas Misas
+                    </h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.Misas != null && Model.Misas.Any())
+                    {
+                        var proximasMisas = Model.Misas
+                            .Where(m => m.Fecha >= DateTime.Now && m.Estado == "Programada")
+                            .OrderBy(m => m.Fecha)
+                            .Take(5);
+
+                        @if (proximasMisas.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Hora</th>
+                                            <th>Estado</th>
+                                            <th>Sacerdote</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var misa in proximasMisas)
+                                        {
+                                            <tr>
+                                                <td>@misa.Fecha.ToString("dd/MM/yyyy")</td>
+                                                <td><strong>@misa.Fecha.ToString("HH:mm")</strong></td>
+                                                <td><span class="badge bg-info">@misa.Estado</span></td>
+                                                <td>@(misa.Sacerdote?.NombreCompleto ?? "Sin asignar")</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="text-muted text-center">No hay misas programadas próximamente.</p>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">No hay misas registradas.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

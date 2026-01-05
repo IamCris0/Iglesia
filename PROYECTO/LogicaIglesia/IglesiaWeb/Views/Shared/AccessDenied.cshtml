@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Acceso Denegado";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card border-danger">
+                <div class="card-body">
+                    <i class="fas fa-ban fa-5x text-danger mb-4"></i>
+                    <h2 class="text-danger">Acceso Denegado</h2>
+                    <p class="lead">No tienes permisos para acceder a esta sección.</p>
+                    <hr>
+                    <p class="text-muted">
+                        Si crees que esto es un error, contacta al administrador del sistema.
+                    </p>
+                    <div class="mt-4">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Volver al Inicio
+                        </a>
+                        <a asp-controller="Auth" asp-action="Logout" class="btn btn-secondary">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

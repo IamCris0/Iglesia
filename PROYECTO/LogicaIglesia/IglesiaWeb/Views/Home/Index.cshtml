@@ -1,8 +1,261 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid mt-4">
+    <!-- Mensaje de bienvenida -->
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- Encabezado del Dashboard -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-6">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </h1>
+            <p class="text-muted">
+                Bienvenido, <strong>@Context.Session.GetString("UsuarioNombre")</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Tarjetas de Estadísticas -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Capillas
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                @ViewBag.TotalCapillas
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-church fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Laicos Activos
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                @ViewBag.TotalLaicos
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Misas Próximas
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                @ViewBag.TotalMisasProximas
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cross fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Recaudado (Mes)
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                $@ViewBag.TotalRecaudadoMes.ToString("N2")
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contenido Principal -->
+    <div class="row">
+        <!-- Próximas Misas -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-calendar-alt"></i> Próximas Misas
+                    </h6>
+                    <a asp-controller="Misa" asp-action="Index" class="btn btn-sm btn-primary">
+                        Ver todas
+                    </a>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.ProximasMisas != null && ViewBag.ProximasMisas.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
+                                        <th>Capilla</th>
+                                        <th>Sacerdote</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var misa in ViewBag.ProximasMisas)
+                                    {
+                                        <tr>
+                                            <td>@misa.Fecha.ToString("dd/MM/yyyy")</td>
+                                            <td><strong>@misa.Fecha.ToString("HH:mm")</strong></td>
+                                            <td>@misa.Capilla?.Nombre</td>
+                                            <td>@(misa.Sacerdote?.NombreCompleto ?? "Sin asignar")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">No hay misas programadas próximamente.</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Solicitudes Pendientes -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-tasks"></i> Solicitudes Pendientes
+                    </h6>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.SolicitudesPendientes != null && ViewBag.SolicitudesPendientes.Count > 0)
+                    {
+                        @foreach (var solicitud in ViewBag.SolicitudesPendientes)
+                        {
+                            <div class="mb-3 pb-3 border-bottom">
+                                <h6 class="mb-1">@solicitud.Sacramento</h6>
+                                <small class="text-muted">
+                                    <i class="fas fa-user"></i> @solicitud.Laico?.NombreCompleto
+                                </small><br>
+                                <small class="text-muted">
+                                    <i class="fas fa-calendar"></i> @solicitud.FechaSolicitada?.ToString("dd/MM/yyyy")
+                                </small>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">No hay solicitudes pendientes.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accesos Rápidos -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-bolt"></i> Accesos Rápidos
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Capilla" asp-action="Create" class="btn btn-outline-primary btn-block">
+                                <i class="fas fa-plus-circle fa-2x mb-2"></i>
+                                <p class="mb-0 small">Nueva Capilla</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Laico" asp-action="Create" class="btn btn-outline-success btn-block">
+                                <i class="fas fa-user-plus fa-2x mb-2"></i>
+                                <p class="mb-0 small">Nuevo Laico</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Misa" asp-action="Create" class="btn btn-outline-info btn-block">
+                                <i class="fas fa-calendar-plus fa-2x mb-2"></i>
+                                <p class="mb-0 small">Nueva Misa</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Misa" asp-action="GenerarAutomatico" class="btn btn-outline-warning btn-block">
+                                <i class="fas fa-magic fa-2x mb-2"></i>
+                                <p class="mb-0 small">Generar Misas</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Capilla" asp-action="Index" class="btn btn-outline-secondary btn-block">
+                                <i class="fas fa-church fa-2x mb-2"></i>
+                                <p class="mb-0 small">Ver Capillas</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <a asp-controller="Laico" asp-action="Index" class="btn btn-outline-dark btn-block">
+                                <i class="fas fa-users fa-2x mb-2"></i>
+                                <p class="mb-0 small">Ver Laicos</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+    .border-left-primary {
+        border-left: 4px solid #4e73df !important;
+    }
+    .border-left-success {
+        border-left: 4px solid #1cc88a !important;
+    }
+    .border-left-info {
+        border-left: 4px solid #36b9cc !important;
+    }
+    .border-left-warning {
+        border-left: 4px solid #f6c23e !important;
+    }
+    .text-xs {
+        font-size: 0.7rem;
+    }
+</style>
