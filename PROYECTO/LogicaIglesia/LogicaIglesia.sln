@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{3DEA6DBC-F157-48DC-8AC9-C34294F0D7F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaIglesiaWeb", "IglesiaWeb\SistemaIglesiaWeb.csproj", "{62E1DE8A-2695-473E-B0F8-4F483E837EC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3DEA6DBC-F157-48DC-8AC9-C34294F0D7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEA6DBC-F157-48DC-8AC9-C34294F0D7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEA6DBC-F157-48DC-8AC9-C34294F0D7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E1DE8A-2695-473E-B0F8-4F483E837EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E1DE8A-2695-473E-B0F8-4F483E837EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E1DE8A-2695-473E-B0F8-4F483E837EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E1DE8A-2695-473E-B0F8-4F483E837EC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
